@@ -30,7 +30,56 @@
 <li>熟悉团队项目开发的模式及使用SVN/Git等版本控制；</li>
 </ul>
 <h3 id="项目经验"><a href="#项目经验" class="headerlink" title="项目经验"></a>项目经验</h3><ul>
-<li>能源管理系统<ol>
+<li><p>修狗系统</p>
+<ol>
+<li>运行环境：CentOS6，Apache2.4，MariaDB，PHP5.6，mongoDB，redis，bootstrap3</li>
+<li>项目描述：该项目基于MVC框架，是关于手机等数码产品维修的O2O项目，用户可以通过PC网页、微信公众号以及微信和支付宝的小程序提交手机故障维修订单，然后通过上门、邮寄及预约到店维修三种方式维修。</li>
+<li>项目介绍：<ul>
+<li>平台管理端打通产品库以及自有产品的管理，全局平台的可维修故障以及报价管理，所有订单操作流程的查看，维修中心及其账号的配置管理，站内消息管理，审核维修中心的结算单以及退件、发票等，记录管理B端订单的回款； </li>
+<li>维修中心在业务中是维修的主体，由平台分配管理员账号，可以管理自己维修中心的订单，并且可以通过页面发起维修订单结算，以及管理自己的人员，操作日志管理，以及咨询电话、客服QQ和轮播图管理。</li>
+<li>工程师端主要为工程师上门维修时候使用，可以查看和修改用户提交的订单信息，并且提供付款。</li>
+<li>用户端包括PC页面以及，公众号以及支付宝和微信的小程序，页面根据用户IP或者移动端的GPS定位用户位置，然后获得最近的维修中心，维修完成后短信通知用户，可以通过微信和支付宝付款。</li>
+</ul>
+</li>
+<li>主要工作：<ul>
+<li>B端和C端的故障维修报价库设计开发，包括故障的大类、小类、维修方案以及关联产品库后报价；</li>
+<li>维修订单操作状态流的设计以及订单详情操作的开发；</li>
+<li>订单的用户评价机制设计和开发，包括用户页面的jquery开发星级打分插件；</li>
+<li>系统后台新建订单B端和C端订单的改版；</li>
+<li>系统的图片库建立，包括ajax提交图片，图片上传私有云以及增删改的操作；</li>
+<li>维修中心及其账号的管理操作，确认维修中心管理员以及菜单权限；</li>
+<li>后台系统的人员账号添加登录机制设计开发；</li>
+<li>财务人员结算审核系统，包括审核发票扫描图、打款审核确认以及B端订单回款导入审核；</li>
+<li>站内消息系统管理，可以编辑消息的内容和接受着；</li>
+<li>系统共用excel导入导出工具模块开发；</li>
+<li>微信公众号下单流程及订单查询功能的开发，调用支付宝的js api扫描配件条形码；</li>
+<li>工程师端订单详情操作的移动页面的开发；</li>
+<li>支付宝即时到账支付的接入。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>恒星系统</p>
+<ol>
+<li>运行环境：CentOS6，Apache2.4，MariaDB，PHP5.3，mongoDB，redis，bootstrap2</li>
+<li>项目介绍：<ul>
+<li>该项目是在线产品库的新版营销平台，主要服务对象是产品厂家，可以帮助厂家用户将自己的品牌和产品的详细参数加入到在线产品库，并且可以通过平台购买厂品介绍和推荐的各种服务，如产品详细配置说明升级，全面的产品效果图展示，评测图文文章，视频评测，行情分析文章，竞品动态分析，移动推荐位竞价，产品库产品置顶推荐，百度搜索关键词以及百度阿拉丁等服务。</li>
+<li>后台运营人员会审核用户提交的品牌产品参数以及购买的服务，以及可以看到用户的充值消费的统计，销售人员可以通过系统跟踪自己发展的用户对平台各项服务的使用消费情况的情况，以及发展报备待发展的客户。<ol>
+<li>主要工作：</li>
+</ol>
+</li>
+<li>移动产品详情页经销商推荐位置竞价，结果通过缓存redis产品库读取；</li>
+<li>产品列表页三个置顶推荐位的购买；</li>
+<li>产品升级、产品置顶、百度阿拉丁等服务的定制推广购买；</li>
+<li>销售人员的客户报备池；</li>
+<li>百度搜索关键词推广购买；</li>
+<li>慧聪品牌产品详细参数的添加；</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>能源管理系统</p>
+<ol>
 <li>运行环境：windows，Apache2.4，PostgreSQL9.5，PHP5.4</li>
 <li>项目描述：该项目基于框架Yii2，针对超市商场写字楼等大型建筑的水电冷暖等能源的消耗情况，将仪表等设备采集到的数据整理并展示给用户，并对用户的能源过度消耗，设备运行异常等状况进行报警，通过页面控制空调或者照明灯的开关。</li>
 <li>项目介绍：项目主要功能模块包括初始化，设施管理，设施图编辑，自定义报表，单点位报表查看，点位报警管理，时间模式编辑，设备运行状态，能源分类编辑展示，能耗数据分类展示，能耗计算公式点位关联，基准值设置，电费计算管理，点位管理，点位翻译，bacnet设备管理与配置，modbus设备管理与配置，季节点位类型，历史能耗数据，报警规则、时间的设定，报警事件添加，单位管理，数据库定时备份，菜单管理，话题讨论，任务指派等模块。</li>
@@ -38,8 +87,8 @@
 </ol>
 </li>
 </ul>
-<h3 id="自我评价"><a href="#自我评价" class="headerlink" title="自我评价"></a>自我评价</h3><p>一个有点洁癖，有点强迫症，有点好奇心的程序员</p>
-</div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SSH/">SSH</a><span class="category-list-count">2</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/SSH/" style="font-size: 15px;">SSH</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/02/mysql主主和主从/">MySQL主从复制与主主复制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/29/ssh-copy-id/">利用ssh-copy-id将ssh-key复制到远程主机实现免密登录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/15/configure-multiple-ssh-key/">本地配置多个ssh-key</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/28/hello-world/">用Hexo生成静态博客</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.izhuangzi.com/" title="izhuangzi" target="_blank">izhuangzi</a><ul></ul><a href="https://github.com/izhuangzi" title="izhuangzi" target="_blank">izhuangzi</a><ul></ul><a href="http://www.ruanyifeng.com/" title="阮一峰的个人网站" target="_blank">阮一峰的个人网站</a><ul></ul><a href="http://www.laruence.com/" title="风雪之隅" target="_blank">风雪之隅</a><ul></ul><a href="https://www.liaoxuefeng.com/" title="廖雪峰的官方网站" target="_blank">廖雪峰的官方网站</a><ul></ul><a href="http://www.php-internals.com/" title="TIPI" target="_blank">TIPI</a><ul></ul><a href="https://huoding.com/" title="火丁笔记" target="_blank">火丁笔记</a><ul></ul><a href="https://www.barretlee.com/" title="小胡子哥" target="_blank">小胡子哥</a><ul></ul><a href="http://www.yinwang.org/" title="王垠" target="_blank">王垠</a><ul></ul><a href="https://tonybai.com/" target="_blank"></a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">izhuangzi.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+<h3 id="自我评价"><a href="#自我评价" class="headerlink" title="自我评价"></a>自我评价</h3><p>一个有点洁癖，有点强迫症，有点好奇心的程序员。</p>
+</div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SSH/">SSH</a><span class="category-list-count">2</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/SSH/" style="font-size: 15px;">SSH</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/02/mysql主主和主从/">MySQL主从复制与主主复制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/29/ssh-copy-id/">利用ssh-copy-id将ssh-key复制到远程主机实现免密登录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/15/configure-multiple-ssh-key/">本地配置多个ssh-key</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/28/hello-world/">用Hexo生成静态博客</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.izhuangzi.com/" title="izhuangzi" target="_blank">izhuangzi</a><ul></ul><a href="https://github.com/izhuangzi" title="izhuangzi" target="_blank">izhuangzi</a><ul></ul><a href="http://www.ruanyifeng.com/" title="阮一峰的个人网站" target="_blank">阮一峰的个人网站</a><ul></ul><a href="http://www.laruence.com/" title="风雪之隅" target="_blank">风雪之隅</a><ul></ul><a href="https://www.liaoxuefeng.com/" title="廖雪峰的官方网站" target="_blank">廖雪峰的官方网站</a><ul></ul><a href="http://www.php-internals.com/" title="TIPI" target="_blank">TIPI</a><ul></ul><a href="https://huoding.com/" title="火丁笔记" target="_blank">火丁笔记</a><ul></ul><a href="https://www.barretlee.com/" title="小胡子哥" target="_blank">小胡子哥</a><ul></ul><a href="http://www.yinwang.org/" title="王垠" target="_blank">王垠</a><ul></ul><a href="https://tonybai.com/" target="_blank"></a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">izhuangzi.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
 if (search_path.length == 0) {
    search_path = 'search.xml';
 }

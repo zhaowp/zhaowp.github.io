@@ -1,91 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title>MySQL主从复制与主主复制</title>
-      <link href="/2018/04/02/mysql%E4%B8%BB%E4%B8%BB%E5%92%8C%E4%B8%BB%E4%BB%8E/"/>
-      <url>/2018/04/02/mysql%E4%B8%BB%E4%B8%BB%E5%92%8C%E4%B8%BB%E4%BB%8E/</url>
-      <content type="html"><![CDATA[<p>mysql主从复制和主主复制的技术已经算是比较成熟了<br><a href="https://www.cnblogs.com/phpstudy2015-6/p/6485819.html" target="_blank" rel="noopener">https://www.cnblogs.com/phpstudy2015-6/p/6485819.html</a></p>]]></content>
-      
+<search>
+  <entry>
+    <title><![CDATA[MySQL主从复制与主主复制]]></title>
+    <url>%2F2018%2F04%2F02%2Fmysql%E4%B8%BB%E4%B8%BB%E5%92%8C%E4%B8%BB%E4%BB%8E%2F</url>
+    <content type="text"><![CDATA[mysql主从复制和主主复制的技术已经算是比较成熟了https://www.cnblogs.com/phpstudy2015-6/p/6485819.html]]></content>
       <categories>
-          
-          <category> MySQL </category>
-          
+        <category>MySQL</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> MySQL </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>利用ssh-copy-id将ssh-key复制到远程主机实现免密登录</title>
-      <link href="/2018/03/29/ssh-copy-id/"/>
-      <url>/2018/03/29/ssh-copy-id/</url>
-      <content type="html"><![CDATA[<p>运行命令ssh-copy-id user@server，按照提示输入自己的登录密码，马上就会提示你登录，就可以了</p>]]></content>
-      
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[利用ssh-copy-id将ssh-key复制到远程主机实现免密登录]]></title>
+    <url>%2F2018%2F03%2F29%2Fssh-copy-id%2F</url>
+    <content type="text"><![CDATA[运行命令ssh-copy-id user@server，按照提示输入自己的登录密码，马上就会提示你登录，就可以了]]></content>
       <categories>
-          
-          <category> SSH </category>
-          
+        <category>SSH</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> SSH </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>本地配置多个ssh-key</title>
-      <link href="/2018/03/15/configure-multiple-ssh-key/"/>
-      <url>/2018/03/15/configure-multiple-ssh-key/</url>
-      <content type="html"><![CDATA[<p>访问公司的服务器已经生成了ssh-key,再访问GitHub的git版本库时，还要需要生成不同的ssh-key<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@yourcompany.com"</span></span><br></pre></td></tr></table></figure></p><p>回车执行后，修改生成文件的路径或者文件名，然后在文件里~/.ssh/config 配置不同域名的ssh-key文件,<br>比如我的Github配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    User git</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_github%</span><br></pre></td></tr></table></figure></p>]]></content>
-      
+      <tags>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[本地配置多个ssh-key]]></title>
+    <url>%2F2018%2F03%2F15%2Fconfigure-multiple-ssh-key%2F</url>
+    <content type="text"><![CDATA[访问公司的服务器已经生成了ssh-key,再访问GitHub的git版本库时，还要需要生成不同的ssh-key1$ ssh-keygen -t rsa -C "youremail@yourcompany.com" 回车执行后，修改生成文件的路径或者文件名，然后在文件里~/.ssh/config 配置不同域名的ssh-key文件,比如我的Github配置12345Host github.com HostName github.com User git PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_github%]]></content>
       <categories>
-          
-          <category> SSH </category>
-          
+        <category>SSH</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> SSH </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>用Hexo生成静态博客</title>
-      <link href="/2018/02/28/hello-world/"/>
-      <url>/2018/02/28/hello-world/</url>
-      <content type="html"><![CDATA[<p>虽然一名PHP程序员，但是觉得node + npm + github的工具特别好用，所有用Hexo框架来生成一个纯静态博客站。<br>这里是整理hexo框架搭建后的常用命令及其说明。</p><h3 id="新建文章文件"><a href="#新建文章文件" class="headerlink" title="新建文章文件"></a>新建文章文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n <span class="string">"my article"</span>  <span class="comment">#完整命令为hexo new,新建一篇名为“my article”的文章</span></span><br></pre></td></tr></table></figure><h3 id="开启本地webserver服务"><a href="#开启本地webserver服务" class="headerlink" title="开启本地webserver服务"></a>开启本地webserver服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s  <span class="comment">#完整命令为hexo server,启动本地webserver服务</span></span><br></pre></td></tr></table></figure><h3 id="清除生成的本地静态文件"><a href="#清除生成的本地静态文件" class="headerlink" title="清除生成的本地静态文件"></a>清除生成的本地静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean  <span class="comment">#清除生成的本地静态文件</span></span><br></pre></td></tr></table></figure><h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g  <span class="comment">#完整命令为hexo generate,用于生成静态文件</span></span><br></pre></td></tr></table></figure><h3 id="上传到远程站点"><a href="#上传到远程站点" class="headerlink" title="上传到远程站点"></a>上传到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d  <span class="comment">#完整命令为hexo deploy,用于将本地文件发布到远程仓库</span></span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[用Hexo生成静态博客]]></title>
+    <url>%2F2018%2F02%2F28%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[虽然一名PHP程序员，但是觉得node + npm + github的工具特别好用，所有用Hexo框架来生成一个纯静态博客站。这里是整理hexo框架搭建后的常用命令及其说明。 新建文章文件1$ hexo n "my article" #完整命令为hexo new,新建一篇名为“my article”的文章 开启本地webserver服务1$ hexo s #完整命令为hexo server,启动本地webserver服务 清除生成的本地静态文件1$ hexo clean #清除生成的本地静态文件 生成静态文件1$ hexo g #完整命令为hexo generate,用于生成静态文件 上传到远程站点1$ hexo d #完整命令为hexo deploy,用于将本地文件发布到远程仓库]]></content>
       <categories>
-          
-          <category> Hexo </category>
-          
+        <category>Hexo</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-  
-  
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
 </search>
