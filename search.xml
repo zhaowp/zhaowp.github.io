@@ -1,175 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title>php5.3升级php5.6的坑</title>
-      <link href="/2018/04/17/php5-3%E5%8D%87%E7%BA%A7php5-6%E7%9A%84%E5%9D%91/"/>
-      <url>/2018/04/17/php5-3%E5%8D%87%E7%BA%A7php5-6%E7%9A%84%E5%9D%91/</url>
-      <content type="html"><![CDATA[<p>整理一下最近升级PHP5.6碰到的坑，主要是php5.6不兼容php5.3的几个问题</p><ol><li><p>htmlspecialchars默认字符集为UTF-8<br>由于历史原因公司项目编码是GBK，这样这个函数输出为空<br>参考链接：<a href="http://php.net/manual/zh/function.htmlspecialchars.php" target="_blank" rel="noopener">http://php.net/manual/zh/function.htmlspecialchars.php</a></p></li><li><p>curl文件上传<br>必须先设置 CURLOPT_SAFE_UPLOAD 为 FALSE 才能够使用 @file 语法来上传文件。 建议使用 CURLFile 类来上传文件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl_setopt(<span class="variable">$ch</span>, CURLOPT_SAFE_UPLOAD, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure></li></ol>]]></content>
-      
+<search>
+  <entry>
+    <title><![CDATA[判断VPS虚拟技术的方法]]></title>
+    <url>%2F2018%2F04%2F25%2F%E5%88%A4%E6%96%ADVPS%E8%99%9A%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[CentOS或RedHat系统的话，执行安装命令：1$ yum install -y virt-what ubuntu或者debian系统的话，执行安装命令：1$ apt-get install virt-what virt-what是一个判断当前环境所使用的虚拟技术的脚本，常见的虚拟技术基本上都能正常识别出来。安装好virt-what后，执行命令：1$ virt-what 根据返回的信息，即可判断出当前VPS所使用的虚拟技术。]]></content>
       <categories>
-          
-          <category> PHP </category>
-          
+        <category>VPS</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> PHP </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>macOS查看端口及杀死进程</title>
-      <link href="/2018/04/16/macos%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%8F%8A%E6%9D%80%E6%AD%BB%E8%BF%9B%E7%A8%8B/"/>
-      <url>/2018/04/16/macos%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%8F%8A%E6%9D%80%E6%AD%BB%E8%BF%9B%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<p>这个指令同样试用centos</p><p>按端口号查看进程：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i :端口号</span><br></pre></td></tr></table></figure></p><p>然后根据PID杀进程：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">kill</span> -9 PID</span><br></pre></td></tr></table></figure></p>]]></content>
-      
+      <tags>
+        <tag>VPS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[php5.3升级php5.6的坑]]></title>
+    <url>%2F2018%2F04%2F17%2Fphp5-3%E5%8D%87%E7%BA%A7php5-6%E7%9A%84%E5%9D%91%2F</url>
+    <content type="text"><![CDATA[整理一下最近升级PHP5.6碰到的坑，主要是php5.6不兼容php5.3的几个问题 htmlspecialchars默认字符集为UTF-8由于历史原因公司项目编码是GBK，这样这个函数输出为空参考链接：http://php.net/manual/zh/function.htmlspecialchars.php curl文件上传必须先设置 CURLOPT_SAFE_UPLOAD 为 FALSE 才能够使用 @file 语法来上传文件。 建议使用 CURLFile 类来上传文件 1curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);]]></content>
       <categories>
-          
-          <category> macOS </category>
-          
+        <category>PHP</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> macOS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>mysql查看QPS/TPS的方法</title>
-      <link href="/2018/04/16/mysql%E6%9F%A5%E7%9C%8BQPS-TPS%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-      <url>/2018/04/16/mysql%E6%9F%A5%E7%9C%8BQPS-TPS%E7%9A%84%E6%96%B9%E6%B3%95/</url>
-      <content type="html"><![CDATA[<p>对于运行中的MySQL监控运行状态的性能方法<br><br><br>(1)QPS(每秒Query量)<br>QPS = Questions(or Queries) / seconds<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql &gt; show  global  status like <span class="string">'Question%'</span>;</span><br></pre></td></tr></table></figure></p><p>(2)TPS(每秒事务量)<br>TPS = (Com_commit + Com_rollback) / seconds<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql &gt; show global status like <span class="string">'Com_commit'</span>; </span><br><span class="line">mysql &gt; show global status like <span class="string">'Com_rollback'</span>;</span><br></pre></td></tr></table></figure></p><p>(3)key Buffer 命中率<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;show  global   status  like   <span class="string">'key%'</span>;</span><br></pre></td></tr></table></figure></p><p>key_buffer_read_hits = (1-key_reads / key_read_requests) <em> 100%<br>key_buffer_write_hits = (1-key_writes / key_write_requests) </em> 100% </p><p>(4)InnoDB Buffer命中率<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show status like <span class="string">'innodb_buffer_pool_read%'</span>;</span><br></pre></td></tr></table></figure></p><p>innodb_buffer_read_hits = (1 - innodb_buffer_pool_reads / innodb_buffer_pool_read_requests) * 100%</p><p>(5)Query Cache命中率<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show status like <span class="string">'Qcache%'</span>;</span><br></pre></td></tr></table></figure></p><p>Query_cache_hits = (Qcahce_hits / (Qcache_hits + Qcache_inserts )) * 100%; </p><p>(6)Table Cache状态量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show global  status like <span class="string">'open%'</span>;</span><br></pre></td></tr></table></figure></p><p>比较 open_tables  与 opend_tables 值 </p><p>(7)Thread Cache 命中率<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show global status like <span class="string">'Thread%'</span>; </span><br><span class="line">mysql&gt; show global status like <span class="string">'Connections'</span>;</span><br></pre></td></tr></table></figure></p><p>Thread_cache_hits = (1 - Threads_created / connections ) * 100% </p><p>(8)锁定状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show global  status like <span class="string">'%lock%'</span>;</span><br></pre></td></tr></table></figure></p><p>Table_locks_waited/Table_locks_immediate=0.3%  如果这个比值比较大的话，说明表锁造成的阻塞比较严重<br>Innodb_row_lock_waits innodb行锁，太大可能是间隙锁造成的 </p><p>(9)复制延时量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql &gt; show slave status</span><br><span class="line">``` </span><br><span class="line">查看延时时间 </span><br><span class="line"> </span><br><span class="line">(10) Tmp Table 状况(临时表状况) </span><br><span class="line">``` bash</span><br><span class="line">mysql &gt; show status like <span class="string">'Create_tmp%'</span>;</span><br></pre></td></tr></table></figure></p><p>Created_tmp_disk_tables/Created_tmp_tables比值最好不要超过10%，如果Created_tmp_tables值比较大，<br>可能是排序句子过多或者是连接句子不够优化 </p><p>(11) Binlog Cache 使用状况<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql &gt; show status like <span class="string">'Binlog_cache%'</span>;</span><br></pre></td></tr></table></figure></p><p>如果Binlog_cache_disk_use值不为0 ，可能需要调大 binlog_cache_size大小 </p><p>(12) Innodb_log_waits 量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql &gt; show status like <span class="string">'innodb_log_waits'</span>;</span><br></pre></td></tr></table></figure></p><p>Innodb_log_waits值不等于0的话，表明 innodb log  buffer 因为空间不足而等待 </p>]]></content>
-      
+      <tags>
+        <tag>PHP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[macOS查看端口及杀死进程]]></title>
+    <url>%2F2018%2F04%2F16%2Fmacos%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%8F%8A%E6%9D%80%E6%AD%BB%E8%BF%9B%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[这个指令同样试用centos 按端口号查看进程：1sudo lsof -i :端口号 然后根据PID杀进程：1sudo kill -9 PID]]></content>
       <categories>
-          
-          <category> MySQL </category>
-          
+        <category>macOS</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> MySQL </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>每个程序员应该读的最有影响力的书</title>
-      <link href="/2018/04/15/the-single-most-influential-book/"/>
-      <url>/2018/04/15/the-single-most-influential-book/</url>
-      <content type="html"><![CDATA[<p>本文来自stackoverflow的问题，<br>What is the single most influential book every programmer should read？<br>每个程序员应该读的最有影响力的书，整理在这里。</p><ul><li>Code Complete (2nd edition) by Steve McConnell    (代码大全)</li><li>The Pragmatic Programmer    （程序员修炼之道）</li><li>Structure and Interpretation of Computer Programs    （计算机程序的构造和解释）</li><li>The C Programming Language by Kernighan and Ritchie</li><li>Introduction to Algorithms by Cormen, Leiserson, Rivest &amp; Stein    （算法导论）</li><li>Design Patterns by the Gang of Four    （设计模式）</li><li>Refactoring: Improving the Design of Existing Code    （重构:改善既有代码的设计）</li><li>The Mythical Man Month    （人月神话）</li><li>The Art of Computer Programming by Donald Knuth    （计算机程序设计艺术）</li><li>Compilers: Principles, Techniques and Tools by Alfred V. Aho, Ravi Sethi and Jeffrey D. Ullman （编译程序：原理、技术和工具）</li><li>Gödel, Escher, Bach by Douglas Hofstadter</li><li>Clean Code: A Handbook of Agile Software Craftsmanship by Robert C. Martin （清洁代码：敏捷软件工艺手册）</li><li>Effective C++</li><li>More Effective C++</li><li>CODE by Charles Petzold （编码的奥秘）</li><li>Programming Pearls by Jon Bentley （编程珠玑）</li><li>Working Effectively with Legacy Code by Michael C. Feathers （修改代码的艺术）</li><li>Peopleware by Demarco and Lister （人件）</li><li>Coders at Work by Peter Seibel （编程人生）</li><li>Surely You’re Joking, Mr. Feynman!</li><li>Effective Java 2nd edition</li><li>Patterns of Enterprise Application Architecture by Martin Fowler （企业应用架构模式）</li><li>The Little Schemer</li><li>The Seasoned Schemer</li><li>Why’s (Poignant) Guide to Ruby</li><li>The Inmates Are Running The Asylum: Why High Tech Products Drive Us Crazy and How to Restore the Sanity</li><li>The Art of Unix Programming</li><li>Test-Driven Development: By Example by Kent Beck</li><li>Practices of an Agile Developer</li><li>Don’t Make Me Think</li><li>Agile Software Development, Principles, Patterns, and Practices by Robert C. Martin</li><li>Domain Driven Designs by Eric Evans （领域驱动设计）</li><li>The Design of Everyday Things by Donald Norman （设计心理学）</li><li>Modern C++ Design by Andrei Alexandrescu</li><li>Best Software Writing I by Joel Spolsky</li><li>The Practice of Programming by Kernighan and Pike</li><li>Pragmatic Thinking and Learning: Refactor Your Wetware by Andy Hunt</li><li>Software Estimation: Demystifying the Black Art by Steve McConnel</li><li>The Passionate Programmer (My Job Went To India) by Chad Fowler</li><li>Hackers: Heroes of the Computer Revolution</li><li>Algorithms + Data Structures = Programs</li><li>Writing Solid Code</li><li>JavaScript - The Good Parts</li><li>Getting Real by 37 Signals</li><li>Foundations of Programming by Karl Seguin</li><li>Computer Graphics: Principles and Practice in C (2nd Edition)</li><li>Thinking in Java by Bruce Eckel</li><li>The Elements of Computing Systems</li><li>Refactoring to Patterns by Joshua Kerievsky</li><li>Modern Operating Systems by Andrew S. Tanenbaum</li><li>The Annotated Turing</li><li>Things That Make Us Smart by Donald Norman</li><li>The Timeless Way of Building by Christopher Alexander</li><li>The Deadline: A Novel About Project Management by Tom DeMarco</li><li>The C++ Programming Language (3rd edition) by Stroustrup</li><li>Patterns of Enterprise Application Architecture</li><li>Computer Systems - A Programmer’s Perspective</li><li>Agile Principles, Patterns, and Practices in C# by Robert C. Martin</li><li>Growing Object-Oriented Software, Guided by Tests</li><li>Framework Design Guidelines by Brad Abrams</li><li>Object Thinking by Dr. David West</li><li>Advanced Programming in the UNIX Environment by W. Richard Stevens</li><li>Hackers and Painters: Big Ideas from the Computer Age （黑客和画家）</li><li>The Soul of a New Machine by Tracy Kidder</li><li>CLR via C# by Jeffrey Richter</li><li>The Timeless Way of Building by Christopher Alexander</li><li>Design Patterns in C# by Steve Metsker</li><li>Alice in Wonderland by Lewis Carol</li><li>Zen and the Art of Motorcycle Maintenance by Robert M. Pirsig</li><li>About Face - The Essentials of Interaction Design</li><li>Here Comes Everybody: The Power of Organizing Without Organizations by Clay Shirky</li><li>The Tao of Programming    （编程之道）</li><li>Computational Beauty of Nature</li><li>Writing Solid Code by Steve Maguire</li><li>Philip and Alex’s Guide to Web Publishing</li><li>Object-Oriented Analysis and Design with Applications by Grady Booch</li><li>Effective Java by Joshua Bloch</li><li>Computability by N. J. Cutland</li><li>Masterminds of Programming</li><li>The Tao Te Ching</li><li>The Productive Programmer</li><li>The Art of Deception by Kevin Mitnick</li><li>The Career Programmer: Guerilla Tactics for an Imperfect World by Christopher Duncan</li><li>Paradigms of Artificial Intelligence Programming: Case studies in Common Lisp</li><li>Masters of Doom  （DOOM启世录）</li><li>Pragmatic Unit Testing in C# with NUnit by Andy Hunt and Dave Thomas with Matt Hargett</li><li>How To Solve It by George Polya</li><li>The Alchemist by Paulo Coelho</li><li>Smalltalk-80: The Language and its Implementation</li><li>Writing Secure Code (2nd Edition) by Michael Howard</li><li>Introduction to Functional Programming by Philip Wadler and Richard Bird</li><li>No Bugs! by David Thielen</li><li>Rework by Jason Freid and DHH</li><li>JUnit in Action</li></ul><p>参考链接：<a href="https://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read" target="_blank" rel="noopener">https://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read</a></p>]]></content>
-      
+      <tags>
+        <tag>macOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[mysql查看QPS/TPS的方法]]></title>
+    <url>%2F2018%2F04%2F16%2Fmysql%E6%9F%A5%E7%9C%8BQPS-TPS%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[对于运行中的MySQL监控运行状态的性能方法(1)QPS(每秒Query量)QPS = Questions(or Queries) / seconds1mysql &gt; show global status like 'Question%'; (2)TPS(每秒事务量)TPS = (Com_commit + Com_rollback) / seconds12mysql &gt; show global status like 'Com_commit'; mysql &gt; show global status like 'Com_rollback'; (3)key Buffer 命中率1mysql&gt;show global status like 'key%'; key_buffer_read_hits = (1-key_reads / key_read_requests) 100%key_buffer_write_hits = (1-key_writes / key_write_requests) 100% (4)InnoDB Buffer命中率1mysql&gt; show status like 'innodb_buffer_pool_read%'; innodb_buffer_read_hits = (1 - innodb_buffer_pool_reads / innodb_buffer_pool_read_requests) * 100% (5)Query Cache命中率1mysql&gt; show status like 'Qcache%'; Query_cache_hits = (Qcahce_hits / (Qcache_hits + Qcache_inserts )) * 100%; (6)Table Cache状态量1mysql&gt; show global status like 'open%'; 比较 open_tables 与 opend_tables 值 (7)Thread Cache 命中率12mysql&gt; show global status like 'Thread%'; mysql&gt; show global status like 'Connections'; Thread_cache_hits = (1 - Threads_created / connections ) * 100% (8)锁定状态1mysql&gt; show global status like '%lock%'; Table_locks_waited/Table_locks_immediate=0.3% 如果这个比值比较大的话，说明表锁造成的阻塞比较严重Innodb_row_lock_waits innodb行锁，太大可能是间隙锁造成的 (9)复制延时量1234567mysql &gt; show slave status``` 查看延时时间 (10) Tmp Table 状况(临时表状况) ``` bashmysql &gt; show status like 'Create_tmp%'; Created_tmp_disk_tables/Created_tmp_tables比值最好不要超过10%，如果Created_tmp_tables值比较大，可能是排序句子过多或者是连接句子不够优化 (11) Binlog Cache 使用状况1mysql &gt; show status like 'Binlog_cache%'; 如果Binlog_cache_disk_use值不为0 ，可能需要调大 binlog_cache_size大小 (12) Innodb_log_waits 量1mysql &gt; show status like 'innodb_log_waits'; Innodb_log_waits值不等于0的话，表明 innodb log buffer 因为空间不足而等待]]></content>
       <categories>
-          
-          <category> Book </category>
-          
+        <category>MySQL</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Book </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>MySQL主从复制与主主复制</title>
-      <link href="/2018/04/02/mysql%E4%B8%BB%E4%B8%BB%E5%92%8C%E4%B8%BB%E4%BB%8E/"/>
-      <url>/2018/04/02/mysql%E4%B8%BB%E4%B8%BB%E5%92%8C%E4%B8%BB%E4%BB%8E/</url>
-      <content type="html"><![CDATA[<p>mysql主从复制和主主复制的技术已经算是比较成熟了<br><a href="https://www.cnblogs.com/phpstudy2015-6/p/6485819.html" target="_blank" rel="noopener">https://www.cnblogs.com/phpstudy2015-6/p/6485819.html</a></p>]]></content>
-      
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[每个程序员应该读的最有影响力的书]]></title>
+    <url>%2F2018%2F04%2F15%2Fthe-single-most-influential-book%2F</url>
+    <content type="text"><![CDATA[本文来自stackoverflow的问题，What is the single most influential book every programmer should read？每个程序员应该读的最有影响力的书，整理在这里。 Code Complete (2nd edition) by Steve McConnell (代码大全) The Pragmatic Programmer （程序员修炼之道） Structure and Interpretation of Computer Programs （计算机程序的构造和解释） The C Programming Language by Kernighan and Ritchie Introduction to Algorithms by Cormen, Leiserson, Rivest &amp; Stein （算法导论） Design Patterns by the Gang of Four （设计模式） Refactoring: Improving the Design of Existing Code （重构:改善既有代码的设计） The Mythical Man Month （人月神话） The Art of Computer Programming by Donald Knuth （计算机程序设计艺术） Compilers: Principles, Techniques and Tools by Alfred V. Aho, Ravi Sethi and Jeffrey D. Ullman （编译程序：原理、技术和工具） Gödel, Escher, Bach by Douglas Hofstadter Clean Code: A Handbook of Agile Software Craftsmanship by Robert C. Martin （清洁代码：敏捷软件工艺手册） Effective C++ More Effective C++ CODE by Charles Petzold （编码的奥秘） Programming Pearls by Jon Bentley （编程珠玑） Working Effectively with Legacy Code by Michael C. Feathers （修改代码的艺术） Peopleware by Demarco and Lister （人件） Coders at Work by Peter Seibel （编程人生） Surely You’re Joking, Mr. Feynman! Effective Java 2nd edition Patterns of Enterprise Application Architecture by Martin Fowler （企业应用架构模式） The Little Schemer The Seasoned Schemer Why’s (Poignant) Guide to Ruby The Inmates Are Running The Asylum: Why High Tech Products Drive Us Crazy and How to Restore the Sanity The Art of Unix Programming Test-Driven Development: By Example by Kent Beck Practices of an Agile Developer Don’t Make Me Think Agile Software Development, Principles, Patterns, and Practices by Robert C. Martin Domain Driven Designs by Eric Evans （领域驱动设计） The Design of Everyday Things by Donald Norman （设计心理学） Modern C++ Design by Andrei Alexandrescu Best Software Writing I by Joel Spolsky The Practice of Programming by Kernighan and Pike Pragmatic Thinking and Learning: Refactor Your Wetware by Andy Hunt Software Estimation: Demystifying the Black Art by Steve McConnel The Passionate Programmer (My Job Went To India) by Chad Fowler Hackers: Heroes of the Computer Revolution Algorithms + Data Structures = Programs Writing Solid Code JavaScript - The Good Parts Getting Real by 37 Signals Foundations of Programming by Karl Seguin Computer Graphics: Principles and Practice in C (2nd Edition) Thinking in Java by Bruce Eckel The Elements of Computing Systems Refactoring to Patterns by Joshua Kerievsky Modern Operating Systems by Andrew S. Tanenbaum The Annotated Turing Things That Make Us Smart by Donald Norman The Timeless Way of Building by Christopher Alexander The Deadline: A Novel About Project Management by Tom DeMarco The C++ Programming Language (3rd edition) by Stroustrup Patterns of Enterprise Application Architecture Computer Systems - A Programmer’s Perspective Agile Principles, Patterns, and Practices in C# by Robert C. Martin Growing Object-Oriented Software, Guided by Tests Framework Design Guidelines by Brad Abrams Object Thinking by Dr. David West Advanced Programming in the UNIX Environment by W. Richard Stevens Hackers and Painters: Big Ideas from the Computer Age （黑客和画家） The Soul of a New Machine by Tracy Kidder CLR via C# by Jeffrey Richter The Timeless Way of Building by Christopher Alexander Design Patterns in C# by Steve Metsker Alice in Wonderland by Lewis Carol Zen and the Art of Motorcycle Maintenance by Robert M. Pirsig About Face - The Essentials of Interaction Design Here Comes Everybody: The Power of Organizing Without Organizations by Clay Shirky The Tao of Programming （编程之道） Computational Beauty of Nature Writing Solid Code by Steve Maguire Philip and Alex’s Guide to Web Publishing Object-Oriented Analysis and Design with Applications by Grady Booch Effective Java by Joshua Bloch Computability by N. J. Cutland Masterminds of Programming The Tao Te Ching The Productive Programmer The Art of Deception by Kevin Mitnick The Career Programmer: Guerilla Tactics for an Imperfect World by Christopher Duncan Paradigms of Artificial Intelligence Programming: Case studies in Common Lisp Masters of Doom （DOOM启世录） Pragmatic Unit Testing in C# with NUnit by Andy Hunt and Dave Thomas with Matt Hargett How To Solve It by George Polya The Alchemist by Paulo Coelho Smalltalk-80: The Language and its Implementation Writing Secure Code (2nd Edition) by Michael Howard Introduction to Functional Programming by Philip Wadler and Richard Bird No Bugs! by David Thielen Rework by Jason Freid and DHH JUnit in Action 参考链接：https://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read]]></content>
       <categories>
-          
-          <category> MySQL </category>
-          
+        <category>Book</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> MySQL </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>利用ssh-copy-id将ssh-key复制到远程主机实现免密登录</title>
-      <link href="/2018/03/29/ssh-copy-id/"/>
-      <url>/2018/03/29/ssh-copy-id/</url>
-      <content type="html"><![CDATA[<p>运行命令ssh-copy-id user@server，按照提示输入自己的登录密码，马上就会提示你登录，就可以了</p>]]></content>
-      
+      <tags>
+        <tag>Book</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL主从复制与主主复制]]></title>
+    <url>%2F2018%2F04%2F02%2Fmysql%E4%B8%BB%E4%B8%BB%E5%92%8C%E4%B8%BB%E4%BB%8E%2F</url>
+    <content type="text"><![CDATA[mysql主从复制和主主复制的技术已经算是比较成熟了https://www.cnblogs.com/phpstudy2015-6/p/6485819.html]]></content>
       <categories>
-          
-          <category> SSH </category>
-          
+        <category>MySQL</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> SSH </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>本地配置多个ssh-key</title>
-      <link href="/2018/03/15/configure-multiple-ssh-key/"/>
-      <url>/2018/03/15/configure-multiple-ssh-key/</url>
-      <content type="html"><![CDATA[<p>访问公司的服务器已经生成了ssh-key,再访问GitHub的git版本库时，还要需要生成不同的ssh-key<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@yourcompany.com"</span></span><br></pre></td></tr></table></figure></p><p>回车执行后，修改生成文件的路径或者文件名，然后在文件里~/.ssh/config 配置不同域名的ssh-key文件,<br>比如我的Github配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    User git</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_github%</span><br></pre></td></tr></table></figure></p>]]></content>
-      
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[利用ssh-copy-id将ssh-key复制到远程主机实现免密登录]]></title>
+    <url>%2F2018%2F03%2F29%2Fssh-copy-id%2F</url>
+    <content type="text"><![CDATA[运行命令ssh-copy-id user@server，按照提示输入自己的登录密码，马上就会提示你登录，就可以了]]></content>
       <categories>
-          
-          <category> SSH </category>
-          
+        <category>SSH</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> SSH </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>用Hexo生成静态博客</title>
-      <link href="/2018/02/28/hello-world/"/>
-      <url>/2018/02/28/hello-world/</url>
-      <content type="html"><![CDATA[<p>虽然一名PHP程序员，但是觉得node + npm + github的工具特别好用，所有用Hexo框架来生成一个纯静态博客站。<br>这里是整理hexo框架搭建后的常用命令及其说明。</p><h3 id="新建文章文件"><a href="#新建文章文件" class="headerlink" title="新建文章文件"></a>新建文章文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n <span class="string">"my article"</span>  <span class="comment">#完整命令为hexo new,新建一篇名为“my article”的文章</span></span><br></pre></td></tr></table></figure><h3 id="开启本地webserver服务"><a href="#开启本地webserver服务" class="headerlink" title="开启本地webserver服务"></a>开启本地webserver服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s  <span class="comment">#完整命令为hexo server,启动本地webserver服务</span></span><br></pre></td></tr></table></figure><h3 id="清除生成的本地静态文件"><a href="#清除生成的本地静态文件" class="headerlink" title="清除生成的本地静态文件"></a>清除生成的本地静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean  <span class="comment">#清除生成的本地静态文件</span></span><br></pre></td></tr></table></figure><h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g  <span class="comment">#完整命令为hexo generate,用于生成静态文件</span></span><br></pre></td></tr></table></figure><h3 id="上传到远程站点"><a href="#上传到远程站点" class="headerlink" title="上传到远程站点"></a>上传到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d  <span class="comment">#完整命令为hexo deploy,用于将本地文件发布到远程仓库</span></span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[本地配置多个ssh-key]]></title>
+    <url>%2F2018%2F03%2F15%2Fconfigure-multiple-ssh-key%2F</url>
+    <content type="text"><![CDATA[访问公司的服务器已经生成了ssh-key,再访问GitHub的git版本库时，还要需要生成不同的ssh-key1$ ssh-keygen -t rsa -C "youremail@yourcompany.com" 回车执行后，修改生成文件的路径或者文件名，然后在文件里~/.ssh/config 配置不同域名的ssh-key文件,比如我的Github配置12345Host github.com HostName github.com User git PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_github%]]></content>
       <categories>
-          
-          <category> Hexo </category>
-          
+        <category>SSH</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-  
-  
+      <tags>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[用Hexo生成静态博客]]></title>
+    <url>%2F2018%2F02%2F28%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[虽然一名PHP程序员，但是觉得node + npm + github的工具特别好用，所有用Hexo框架来生成一个纯静态博客站。这里是整理hexo框架搭建后的常用命令及其说明。 新建文章文件1$ hexo n "my article" #完整命令为hexo new,新建一篇名为“my article”的文章 开启本地webserver服务1$ hexo s #完整命令为hexo server,启动本地webserver服务 清除生成的本地静态文件1$ hexo clean #清除生成的本地静态文件 生成静态文件1$ hexo g #完整命令为hexo generate,用于生成静态文件 上传到远程站点1$ hexo d #完整命令为hexo deploy,用于将本地文件发布到远程仓库]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
 </search>
