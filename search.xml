@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[golang编译跨平台的可执行文件]]></title>
+    <url>%2F2018%2F05%2F23%2Fgolang%E7%BC%96%E8%AF%91%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[golang作为一个静态语言本身提供了可以编译为多平台的可执行文件的工具go build，关键是两个参数GOOS和GOARCH具体的指令是:12345678910111213141516# 编译到 linux 64bit$ GOOS=linux GOARCH=amd64 go build# 或者可以使用 -o 选项指定生成二进制文件名字$ GOOS=linux GOARCH=amd64 go build -o app.linux# 编译到 linux 32bit$ GOOS=linux GOARCH=386 go build# 编译到 windows 64bit$ GOOS=windows GOARCH=amd64 go build# 编译到 windows 32bit$ GOOS=windows GOARCH=386 go build# 编译到 Mac OS X 64bit$ GOOS=darwin GOARCH=amd64 go build]]></content>
+      <categories>
+        <category>Golang</category>
+      </categories>
+      <tags>
+        <tag>Golang</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PHP启动内置Web Server]]></title>
     <url>%2F2018%2F05%2F08%2FPHP%E5%90%AF%E5%8A%A8%E5%86%85%E7%BD%AEWeb-Server%2F</url>
     <content type="text"><![CDATA[从php5.4.0开始，php内置了web服务器，官方手册上说明这个内置的Web服务器主要用于本地开发使用，不可用于线上产品环境。执行命令1$ php -S localhost:8080 -t ~/www -S指定域名和端口，-t指定根目录，如果不加这个参数这默认当前目录为根目录，执行成功后输出php版本和监听的域名和端口以及根目录1234PHP 7.1.14 Development Server started at Tue May 8 10:23:49 2018Listening on http://localhost:8080Document root is /Users/wenpeng/wwwPress Ctrl-C to quit.]]></content>
