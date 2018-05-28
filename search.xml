@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[hexo支持本地图片]]></title>
     <url>%2F2018%2F05%2F28%2Fhexo%E6%94%AF%E6%8C%81%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%2F</url>
-    <content type="text"><![CDATA[我的随手记录的博客系统终于支持图片了，再次记录下支持的操作 把主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true 1$ post_asset_folder: true 在hexo项目目录下执行命令，下载安装一个可以上传本地图片的插件hexo-asset-image 1$ npm install hexo-asset-image --save 图片插件安装完后，执行新建文章的命令后，会在文章同级目录下生成和文章同名的目录，这是存放图片的目录 1$ hexo n "test hexo image" #生成文章test-hexo-image.md的文件，同时生成了test-hexo-image的目录，以存放图片 在文章里引用图片时，须先把图片放到生成的目录下，然后直接在markdown文档里直接写图片名，不用写路径 1![xgo_logo](xgo_cn_logo.jpg) 最后是图片例子，用里我们自己项目的logo，希望我们项目组的技术和业务可以被行业认可！]]></content>
+    <content type="text"><![CDATA[我的随手记录的博客系统终于支持图片了，记录下支持的操作 把主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true 1$ post_asset_folder: true 在hexo项目目录下执行命令，下载安装可以上传本地图片的插件hexo-asset-image 1$ npm install hexo-asset-image --save 图片插件安装完后，执行新建文章的命令后，会在文章同级目录下生成和文章同名的目录，这是存放图片的目录 1$ hexo n "test hexo image" #生成文章test-hexo-image.md的文件，同时生成了test-hexo-image的目录，以存放图片 在文章里引用图片时，须先把图片放到生成的目录下，然后直接在markdown文档里直接写图片名，不用写路径 1![xgo_logo](xgo_cn_logo.jpg) 最后是图片例子，用了我们自己项目的logo，希望我们项目组的技术和业务可以被行业认可！]]></content>
       <categories>
         <category>hexo</category>
       </categories>
