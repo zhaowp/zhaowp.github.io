@@ -55,7 +55,7 @@
   <entry>
     <title><![CDATA[PHP启动内置Web Server]]></title>
     <url>%2F2018%2F05%2F08%2FPHP%E5%90%AF%E5%8A%A8%E5%86%85%E7%BD%AEWeb-Server%2F</url>
-    <content type="text"><![CDATA[从php5.4.0开始，php内置了web服务器，官方手册上说明这个内置的Web服务器主要用于本地开发使用，不可用于线上产品环境。执行命令1$ php -S localhost:8080 -t ~/www -S指定域名和端口，-t指定根目录，如果不加这个参数这默认当前目录为根目录，执行成功后输出php版本和监听的域名和端口以及根目录1234PHP 7.1.14 Development Server started at Tue May 8 10:23:49 2018Listening on http://localhost:8080Document root is /Users/wenpeng/wwwPress Ctrl-C to quit.]]></content>
+    <content type="text"><![CDATA[在接触过node，python，golang等语言后，发现PHP在包管理上真是挺麻烦的，而且5.3之前还不许依赖单独的webserver软件。从php5.4.0开始，php内置了web服务器，官方手册上说明这个内置的Web服务器主要用于本地开发使用，不可用于线上产品环境。执行命令1$ php -S localhost:8080 -t ~/www -S指定域名和端口，-t指定根目录，如果不加这个参数这默认当前目录为根目录，执行成功后输出php版本和监听的域名和端口以及根目录1234PHP 7.1.14 Development Server started at Tue May 8 10:23:49 2018Listening on http://localhost:8080Document root is /Users/wenpeng/wwwPress Ctrl-C to quit.]]></content>
       <categories>
         <category>PHP</category>
       </categories>
