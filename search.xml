@@ -34,17 +34,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[职业发展方向的问题]]></title>
-    <url>%2F2018%2F05%2F23%2F%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95%E6%96%B9%E5%90%91%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[最近受市场行情的影响，php行情日渐势微，一直有转战web前端的想法，又受了izhuangzi的鼓励和帮助，其实发力前端的路更好走了，毕竟有izhuangzi这样的前端前辈带领]]></content>
-      <categories>
-        <category>职业发展</category>
-      </categories>
-      <tags>
-        <tag>职业发展</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[javascipt中var,const,let三个关键字的异同]]></title>
     <url>%2F2018%2F05%2F23%2Fjavascipt%E4%B8%ADvar-const-let%E4%B8%89%E4%B8%AA%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E5%BC%82%E5%90%8C%2F</url>
     <content type="text"><![CDATA[let和const是es5开始才有的语法，为了弥补单纯的var定义的不足 var: 可以定义全局和局部变量，定义后可修改，如果没有初始化，默认值为undefined，并且可能有变量提升的情况 const: 定义的其实是常量，而且不是初始化，一点定义和初始化后不能修改，也具有块级作用域 let: 定义块级变量，即局部变量 let和const不能重复定义同一变量]]></content>
