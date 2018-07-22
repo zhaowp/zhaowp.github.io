@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hadoop配置记录]]></title>
+    <url>%2F2018%2F07%2F22%2Fhadoop%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[这个周末做了一次运维，配置了大数据分析平台，主要用到的开源软件是python3.6.2，hadoop3.0.3，spark，hue，hive这五个。 hadoop配置参考连接：https://blog.csdn.net/cafebar123/article/details/73500014配置hadoop碰到不能访问50070端口的问题，需要手动配置端口，hdfs-site.xml 添加如下：1234&lt;property&gt; &lt;name&gt;dfs.http.address&lt;/name&gt; &lt;value&gt;0.0.0.0:50070&lt;/value&gt;&lt;/property&gt;]]></content>
+      <categories>
+        <category>Hadoop</category>
+      </categories>
+      <tags>
+        <tag>Hadoop</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[git-stash用法]]></title>
     <url>%2F2018%2F07%2F16%2Fgit-stash%E7%94%A8%E6%B3%95%2F</url>
     <content type="text"><![CDATA[参考连接：https://www.cnblogs.com/tocy/p/git-stash-reference.html]]></content>
