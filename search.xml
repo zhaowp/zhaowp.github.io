@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git-stash用法]]></title>
+    <url>%2F2018%2F07%2F16%2Fgit-stash%E7%94%A8%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[参考连接：https://www.cnblogs.com/tocy/p/git-stash-reference.html]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PHP解决约瑟夫环问题]]></title>
     <url>%2F2018%2F06%2F03%2F%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[约瑟夫问题是一个经典的算法问题，n个人围城一圈，从1开始依次报数，数到m的人退出，循环报数，知道剩下最后一个人例如：1，2，3，4，5。数到3 的退出 1，2，4，5 2，4，5 2，4 4最后剩下1 123456789101112131415function yue($n,$m)&#123; $arr = range(1,$n);//创建:含有100个值的数组 $i=0; while(count($arr)&gt;1) &#123; ++$i; //不断出队(即删除数组的第一个元素) $survice = array_shift($arr); if($i%$m&lt;&gt;0)&#123; //结合约瑟夫环问题 //报到3就自杀(从队列中踢出),否则等待下一次的审判(再次添加到队尾) array_push($arr, $survice); &#125; &#125; return current($arr); //返回元素的值&#125;]]></content>
@@ -49,10 +60,10 @@
     <url>%2F2018%2F05%2F28%2Fhexo%E6%94%AF%E6%8C%81%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%2F</url>
     <content type="text"><![CDATA[我的随手记录的博客系统终于支持图片了，记录下支持的操作 把主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true 1$ post_asset_folder: true 在hexo项目目录下执行命令，下载安装可以上传本地图片的插件hexo-asset-image 1$ npm install hexo-asset-image --save 图片插件安装完后，执行新建文章的命令后，会在文章同级目录下生成和文章同名的目录，这是存放图片的目录 1$ hexo n "test hexo image" #生成文章test-hexo-image.md的文件，同时生成了test-hexo-image的目录，以存放图片 在文章里引用图片时，须先把图片放到生成的目录下，然后直接在markdown文档里直接写图片名，不用写路径 1![xgo_logo](xgo_cn_logo.jpg) 最后是图片例子，用了我们自己项目的logo，希望我们项目组的技术和业务可以被行业认可！]]></content>
       <categories>
-        <category>hexo</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
