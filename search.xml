@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[tcp_bbr算法优化网络]]></title>
+    <url>%2F2018%2F08%2F30%2Ftcp_bbr%E7%AE%97%E6%B3%95%E4%BC%98%E5%8C%96%E7%BD%91%E7%BB%9C%2F</url>
+    <content type="text"><![CDATA[参考连接：https://www.isthnew.com/archives/centos7-bbr.html]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[运行crontab,查看日志]]></title>
+    <url>%2F2018%2F08%2F28%2Fcrontab%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97%2F</url>
+    <content type="text"><![CDATA[crontab服务 编辑crontab1crontab -e 当前用户第一次执行会提示你选择默认编辑器，crontab默认的是nano，如果以后想修改默认可以执行命令1select-editor 例如：12*/1 * * * * /usr/bin/php /home/vagrant/code/safetyControlApi/artisan schedule:run 1&gt;&gt; /dev/null 2&gt;&amp;1#每分钟执行脚本 重启crontab服务1sudo service cron restart crontab日志 crontab记录日志 12sudo vim /etc/rsyslog.d/50-default.confcron.* /var/log/cron.log #将cron前面的注释符去掉 重启rsyslog 1sudo service rsyslog restart 查看crontab日志 1less /var/log/cron.log]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Laravel读取表字段名]]></title>
+    <url>%2F2018%2F08%2F28%2FLaravel%E8%AF%BB%E5%8F%96%E8%A1%A8%E5%AD%97%E6%AE%B5%E5%90%8D%2F</url>
+    <content type="text"><![CDATA[Schema 1use Illuminate\Support\Facades\Schema; 读取 1$columns = Schema::getColumnListing('admins');]]></content>
+      <categories>
+        <category>Laravel</category>
+      </categories>
+      <tags>
+        <tag>Laravel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hadoop配置记录]]></title>
     <url>%2F2018%2F07%2F22%2Fhadoop%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95%2F</url>
     <content type="text"><![CDATA[这个周末做了一次运维，配置了大数据分析平台，主要用到的开源软件是python3.6.2，hadoop3.0.3，spark，hue，hive这五个。 hadoophadoop配置参考连接：https://blog.csdn.net/cafebar123/article/details/73500014配置hadoop碰到不能访问50070端口的问题，需要手动配置端口，hdfs-site.xml 添加如下：1234&lt;property&gt; &lt;name&gt;dfs.http.address&lt;/name&gt; &lt;value&gt;0.0.0.0:50070&lt;/value&gt;&lt;/property&gt; 然后重新格式化namenode sparkspark需要scala依赖参考连接：https://www.w3cschool.cn/spark_sql/spark_installation.html]]></content>
