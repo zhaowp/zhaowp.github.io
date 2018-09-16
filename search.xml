@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[jenkins学习笔记]]></title>
+    <url>%2F2018%2F09%2F15%2Fjenkins%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[jenkins已经是一个比较成熟的集成工具开源软件，整理一下问题方法官网https://jenkins.io/ 提供了windows、macOS、linx多个系统版本的安装包，最简单的是直接下载最下面一个Generic Java package (.war)，然后像这样直接执行下面的命令，然后就可以通过浏览器地址栏http://localhost:8080 配置jenkins了1java -jar jenkins.war jenkins关闭jenkins默认在浏览器地址打开localhost:8080 1http://localhost:8080/exit jenkins重启 1http://localhost:8080/restart jenkins重新加载 1http://localhost:8080/reload]]></content>
+      <categories>
+        <category>jenkins</category>
+      </categories>
+      <tags>
+        <tag>jenkins</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Google Authenticator身份验证]]></title>
+    <url>%2F2018%2F09%2F05%2FgoogleAuthenticator%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%2F</url>
+    <content type="text"><![CDATA[###GoogleAuthenticator###数字币交易所常用的google authenticator身份验证，github仓库 https://github.com/PHPGangsta/GoogleAuthenticator 服务端(PHP)1234# 测试生成secret$ga = new GoogleAuthenticator();$secret = $ga-&gt;createSecret(64);# $secret = GKRYEJO34IOK7UAABLNZL2TBEHLRT4JJAMGW4UXFD6EK5F4AYVAHZOT32SFSTAN4 12345678910111213141516# 二维码获得$qrCodeUrl = $ga-&gt;getQRCodeGoogleUrl('zhaoTest', $secret);# 单次验证码$oneCode = $ga-&gt;getCode($secret);# 把提交的验证码和服务端上生成的验证码做对比# $secret 服务端的 "安全密匙SecretKey"# $oneCode 手机上看到的 "一次性验证码"# 最后一个参数 为容差时间,这里是2 那么就是 2* 30 sec 一分钟.$checkResult = $ga-&gt;verifyCode($secret, $oneCode, 2);if ($checkResult) &#123; echo '匹配! OK';&#125; else &#123; echo '不匹配! FAILED';&#125; 移动端ios在app store、android可以在google play（You know）安装Google身份验证器]]></content>
+      <categories>
+        <category>Golang</category>
+      </categories>
+      <tags>
+        <tag>Golang</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[tcp_bbr算法优化网络]]></title>
     <url>%2F2018%2F08%2F30%2Ftcp_bbr%E7%AE%97%E6%B3%95%E4%BC%98%E5%8C%96%E7%BD%91%E7%BB%9C%2F</url>
     <content type="text"><![CDATA[参考连接：https://www.isthnew.com/archives/centos7-bbr.html]]></content>
@@ -133,17 +155,6 @@
     <title><![CDATA[golang编译跨平台的可执行文件]]></title>
     <url>%2F2018%2F05%2F23%2Fgolang%E7%BC%96%E8%AF%91%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[golang作为一个静态语言本身提供了可以编译为多平台的可执行文件的工具go build，关键是两个参数GOOS和GOARCH具体的指令是:12345678910111213141516# 编译到 linux 64bit$ GOOS=linux GOARCH=amd64 go build# 或者可以使用 -o 选项指定生成二进制文件名字$ GOOS=linux GOARCH=amd64 go build -o app.linux# 编译到 linux 32bit$ GOOS=linux GOARCH=386 go build# 编译到 windows 64bit$ GOOS=windows GOARCH=amd64 go build# 编译到 windows 32bit$ GOOS=windows GOARCH=386 go build# 编译到 Mac OS X 64bit$ GOOS=darwin GOARCH=amd64 go build]]></content>
-      <categories>
-        <category>Golang</category>
-      </categories>
-      <tags>
-        <tag>Golang</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Google Authenticator身份验证]]></title>
-    <url>%2F2018%2F05%2F23%2FgoogleAuthenticator%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%2F</url>
-    <content type="text"><![CDATA[###GoogleAuthenticator###数字币交易所常用的google authenticator身份验证，github仓库 https://github.com/PHPGangsta/GoogleAuthenticator 服务端(PHP)1234# 测试生成secret$ga = new GoogleAuthenticator();$secret = $ga-&gt;createSecret(64);# $secret = GKRYEJO34IOK7UAABLNZL2TBEHLRT4JJAMGW4UXFD6EK5F4AYVAHZOT32SFSTAN4 12345678910111213141516# 二维码获得$qrCodeUrl = $ga-&gt;getQRCodeGoogleUrl('zhaoTest', $secret);# 单次验证码$oneCode = $ga-&gt;getCode($secret);# 把提交的验证码和服务端上生成的验证码做对比# $secret 服务端的 "安全密匙SecretKey"# $oneCode 手机上看到的 "一次性验证码"# 最后一个参数 为容差时间,这里是2 那么就是 2* 30 sec 一分钟.$checkResult = $ga-&gt;verifyCode($secret, $oneCode, 2);if ($checkResult) &#123; echo '匹配! OK';&#125; else &#123; echo '不匹配! FAILED';&#125; 移动端ios在app store、android可以在google play（You know）安装Google身份验证器]]></content>
       <categories>
         <category>Golang</category>
       </categories>
