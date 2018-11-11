@@ -25,12 +25,12 @@
   <entry>
     <title><![CDATA[Google Authenticator身份验证]]></title>
     <url>%2F2018%2F09%2F05%2FgoogleAuthenticator%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%2F</url>
-    <content type="text"><![CDATA[###GoogleAuthenticator###数字币交易所常用的google authenticator身份验证，github仓库 https://github.com/PHPGangsta/GoogleAuthenticator 服务端(PHP)1234# 测试生成secret$ga = new GoogleAuthenticator();$secret = $ga-&gt;createSecret(64);# $secret = GKRYEJO34IOK7UAABLNZL2TBEHLRT4JJAMGW4UXFD6EK5F4AYVAHZOT32SFSTAN4 12345678910111213141516# 二维码获得$qrCodeUrl = $ga-&gt;getQRCodeGoogleUrl('zhaoTest', $secret);# 单次验证码$oneCode = $ga-&gt;getCode($secret);# 把提交的验证码和服务端上生成的验证码做对比# $secret 服务端的 "安全密匙SecretKey"# $oneCode 手机上看到的 "一次性验证码"# 最后一个参数 为容差时间,这里是2 那么就是 2* 30 sec 一分钟.$checkResult = $ga-&gt;verifyCode($secret, $oneCode, 2);if ($checkResult) &#123; echo '匹配! OK';&#125; else &#123; echo '不匹配! FAILED';&#125; 移动端ios在app store、android可以在google play（You know）安装Google身份验证器]]></content>
+    <content type="text"><![CDATA[数字币交易所常用的google authenticator身份验证，github仓库 https://github.com/PHPGangsta/GoogleAuthenticator 服务端(PHP)1234# 测试生成secret$ga = new GoogleAuthenticator();$secret = $ga-&gt;createSecret(64);# $secret = GKRYEJO34IOK7UAABLNZL2TBEHLRT4JJAMGW4UXFD6EK5F4AYVAHZOT32SFSTAN4 12345678910111213141516# 二维码获得$qrCodeUrl = $ga-&gt;getQRCodeGoogleUrl('zhaoTest', $secret);# 单次验证码$oneCode = $ga-&gt;getCode($secret);# 把提交的验证码和服务端上生成的验证码做对比# $secret 服务端的 "安全密匙SecretKey"# $oneCode 手机上看到的 "一次性验证码"# 最后一个参数 为容差时间,这里是2 那么就是 2* 30 sec 一分钟.$checkResult = $ga-&gt;verifyCode($secret, $oneCode, 2);if ($checkResult) &#123; echo '匹配! OK';&#125; else &#123; echo '不匹配! FAILED';&#125; 移动端ios在app store、android可以在google play（You know）安装Google身份验证器]]></content>
       <categories>
-        <category>Golang</category>
+        <category>其他</category>
       </categories>
       <tags>
-        <tag>Golang</tag>
+        <tag>其他</tag>
       </tags>
   </entry>
   <entry>
