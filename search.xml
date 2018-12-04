@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[xss攻击的类型]]></title>
+    <url>%2F2018%2F11%2F23%2Fxss%E6%94%BB%E5%87%BB%E7%9A%84%E7%B1%BB%E5%9E%8B%2F</url>
+    <content type="text"><![CDATA[常见的三种XSS攻击类型 反射型：一般来说这种类型的XSS，需要攻击者提前构造一个恶意链接，来诱使客户点击，比如这样的一段链接 1www.abc.com/?params=&lt;script&gt;alert(/xss/)&lt;/script&gt; 存储型：这种类型的XSS，危害比前一种大得多。比如一个攻击者在论坛的楼层中包含了一段JavaScript代码，并且服务器没有正确进行过滤输出，那就会造成浏览这个页面的用户执行这段JavaScript代码。 DOMXSS：这种类型则是利用非法输入来闭合对应的html标签。比如，有这样的一个a标签：乍看问题不大，可是当$var的内容变为 ’ onclick=’alert(/xss/) //，这段代码就会被执行。]]></content>
+      <categories>
+        <category>安全</category>
+      </categories>
+      <tags>
+        <tag>安全</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数据结构&算法之美专栏笔记]]></title>
     <url>%2F2018%2F10%2F11%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E%E4%B8%93%E6%A0%8F%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[最近买了极客时间的专栏数据结构和算法之美，抽空看了一下，并且整理记录一下关键点 复杂度分析 数据结构 数组 链表 栈 队列 散列表 二叉树 堆 跳表 图 Tire树 算法 递归 排序 二分查找 搜索 哈希算法 贪心算法 分治算法 回溯算法 动态规划 字符串匹配算法 知识图谱 算法书记推荐整理 入门趣味书 《大话数据结构》 、 《算法图解》 针对特定语言的书 《数据结构和算法分析分析》、《数据结构与算法分析 ：C 语言描述》、《数据结构与算法分析：C++ 描述》、《数据结构与算法分析：Java 语言描述》《数据结构与算法 JavaScript 描述》《数据结构与算法：Python 语言描述》 面试必刷 《剑指 offer》、《编程珠玑》、《编程之美》 经典 《算法导论》、《算法》、《计算机程序设计艺术》 闲暇阅读 《算法帝国》、《数学之美》、《算法之美》 书图谱]]></content>
